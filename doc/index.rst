@@ -142,6 +142,21 @@ To see the full config from this bundle, run:
 
 The main option is ``root_sass`` option, which defaults to ``assets/styles/app.scss``. This represents the source Sass file.
 
+.. caution::
+
+    When defining multiple ``root_sass`` paths, the ``root_sass`` filenames (e.g. ``app.scss``) should be unique, due to the way the css files are generated.
+
+To overcome the need of having unique ``root_sass`` filenames, you could use keys to influence the generated css filename:
+
+.. code-block:: yaml
+
+    symfonycasts_sass:
+        root_sass:
+            admin: assets/admin/styles/app.scss
+            website: assets/website/styles/app.scss
+
+The compiled css files will be named `website.css` and `admin.css`.
+
 Using a different binary
 --------------------------
 
